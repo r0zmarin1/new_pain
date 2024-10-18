@@ -1,12 +1,12 @@
 <?php
-// Включаем строгую типизацию
-declare(strict_types=1);
+declare(strict_types=1);// Включаем строгую типизацию
 
 /**
  * @param $some
  * отладочная функция
  */
-function dd($some){
+function dd($some)
+{
     echo '<pre>';
     print_r($some);
     echo '</pre>';
@@ -17,7 +17,8 @@ function dd($some){
  * @param $url
  * редирект на указаный URL
  */
-function goUrl(string $url){
+function goUrl(string $url)
+{
     echo '<script type="text/javascript">location="';
     echo $url;
     echo '";</script>';
@@ -27,7 +28,7 @@ function goUrl(string $url){
  * функция возвращает масив статей
  * @return array
  */
-function getArticles() : array
+function getArticles(): array
 {
     return json_decode(file_get_contents('db/articles.json'), true);
 }
@@ -37,9 +38,9 @@ function getArticles() : array
  * @param int $id
  * @return array
  */
-function getArticleById(int $id):array
+function getArticleById(int $id): array
 {
-    $articleList =getArticles();
+    $articleList = getArticles();
     $curentArticle = [];
     if (array_key_exists($id, $articleList)) {
         $curentArticle = $articleList[$id];
@@ -48,19 +49,5 @@ function getArticleById(int $id):array
     return $curentArticle;
 }
 
-/**
- * функция генерирует список <li> из Json
- * и формирует ссылки вида URI index.php?id=1
- *
- * @return string
- */
-function getArticleList(): string
-{
-    $articles = getArticles();
-    $link = '';
-    foreach ($articles as $article) {
-        $link .= '<li class="nav-item"><a class="nav-link" href="index.php?id='. $article['id']
-            . '">'. $article['title']. '</a></li>';
-    }
-    return $link;
-}
+
+
