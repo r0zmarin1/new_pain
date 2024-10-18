@@ -37,3 +37,8 @@
 
 [https://learnxinyminutes.com/docs/ru-ru/php-ru/](https://learnxinyminutes.com/docs/ru-ru/php-ru/)  
 [https://www.php.net](https://www.php.net)
+
+Шаблоны Bootstrap 5:
+
+[bootstrapmade.com](https://bootstrapmade.com/bootstrap-5-templates/) 
+[themewagon.com](https://themewagon.com/theme-framework/bootstrap-5/?swoof=1&pa_price=free&really_curr_tax=28-pa_frameworks)
