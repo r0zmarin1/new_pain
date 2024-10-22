@@ -15,6 +15,9 @@ $router->get('/', [\App\Controllers\FrontController::class, 'index']);
 $router->get('/blog/', [\App\Controllers\FrontController::class, 'showArticlesListPage']);
 $router->get('/blog/{id}', [\App\Controllers\FrontController::class, 'showSingleArticlePage']);
 
+
+
+
 try {
     $router->dispatch();
 } catch (RouteNotFoundException $e) {
