@@ -4,6 +4,12 @@
 * [Второе задание](/doc/lesson-002.md)
 * [Третье задание](/doc/lesson-003.md)
 ## Объектно-ориентированного программирования
+[PHP ООП](/do/oop.md)
+
+[SOLID](/do/SOLID.md)
+
+[Что такое Composer?](/do/composer.md)
+
 
 * [Четвёртое задание](/doc/lesson-004.md)
 
