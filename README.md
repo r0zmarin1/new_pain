@@ -1,4 +1,5 @@
 # занятия с группой 1135 в первом семестре 2024
+[![wakatime](https://wakatime.com/badge/github/madhowl/2024.svg?style=plastic)](https://wakatime.com/badge/github/madhowl/2024)
 
 ![Костыль и велосипед](doc/img/1.jpg)
 > Если программисты строили бы дом,
