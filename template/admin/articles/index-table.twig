@@ -3,7 +3,19 @@
 
     <div class="card mb-4">
         <div class="card-header">
-            <h3 class="card-title">Bordered Table</h3>
+            <div class="row">
+                <div class="col-9">
+                    <h3 class="card-title">Статьи</h3>
+                </div>
+                <div class="col-3">
+                    <a href="/admin/article/add"  class="btn btn-success">
+                        Добавить статью  <i class="bi bi-plus"></i>
+                    </a>
+                </div>
+            </div>
+
+
+
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -11,52 +23,33 @@
                 <thead>
                 <tr>
                     <th style="width: 10px">#</th>
-                    <th>Task</th>
-                    <th>Progress</th>
-                    <th style="width: 40px">Label</th>
+                    <th>Заголовок</th>
+                    <th>Обложка</th>
+                    <th style="width: 40px">Действия</th>
                 </tr>
                 </thead>
                 <tbody>
+                {% for article in articles %}
                 <tr class="align-middle">
-                    <td>1.</td>
-                    <td>Update software</td>
+                    <td>{{ article.id}}</td>
+                    <td>{{ article.title}}</td>
                     <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        <div class="col p-2">
+                            <img class="img-fluid " src="/{{ article.image}}" style="width: 200px" alt="Article Image">
                         </div>
                     </td>
-                    <td><span class="badge text-bg-danger">55%</span></td>
-                </tr>
-                <tr class="align-middle">
-                    <td>2.</td>
-                    <td>Clean database</td>
                     <td>
-                        <div class="progress progress-xs">
-                            <div class="progress-bar text-bg-warning" style="width: 70%"></div>
+                        <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
+                            <a href="/admin/article/{{ article.id}}/edit"  class="btn btn-success">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                            <a href="/admin/article/{{ article.id}}/delete"  class="btn btn-danger">
+                                <i class="bi bi-trash3"></i>
+                            </a>
                         </div>
                     </td>
-                    <td> <span class="badge text-bg-warning">70%</span> </td>
                 </tr>
-                <tr class="align-middle">
-                    <td>3.</td>
-                    <td>Cron job running</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar text-bg-primary" style="width: 30%"></div>
-                        </div>
-                    </td>
-                    <td> <span class="badge text-bg-primary">30%</span> </td>
-                </tr>
-                <tr class="align-middle">
-                    <td>4.</td>
-                    <td>Fix and squish bugs</td>
-                    <td>
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar text-bg-success" style="width: 90%"></div>
-                        </div>
-                    </td>
-                    <td> <span class="badge text-bg-success">90%</span> </td>
-                </tr>
+                {% endfor %}
                 </tbody>
             </table>
         </div>

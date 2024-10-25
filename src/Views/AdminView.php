@@ -14,12 +14,14 @@ class AdminView extends CoreView
 
     public function renderIndexPage()
     {
-        return $this->twig->render('layout.twig',[]);
+        $pagetitle = "Admin Panel";
+        return $this->twig->render('layout.twig',compact('pagetitle'));
     }
 
     public function showArticlesTable(array $articles)
     {
-        return $this->twig->render('/articles/index-table.twig',[]);
+        $pagetitle = "Список статей";
+        return $this->twig->render('/articles/index-table.twig',compact('articles','pagetitle'));
     }
 
 }
