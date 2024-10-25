@@ -3,7 +3,9 @@
     "description": "Simple MarkDown Blog",
     "require": {
         "twig/twig": "^3.14",
-        "miladrahimi/phprouter": "5.*"
+        "miladrahimi/phprouter": "5.*",
+        "ext-pdo": "*",
+        "filp/whoops": "^2.16"
     },
     "license": "MIT",
     "autoload": {
@@ -18,5 +20,3 @@
         }
     ]
 }
-
-

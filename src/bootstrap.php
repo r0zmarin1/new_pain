@@ -7,6 +7,7 @@ use MiladRahimi\PhpRouter\Exceptions\RouteNotFoundException;
 use Laminas\Diactoros\Response\HtmlResponse;
 use App\Views\ErrorsView;
 
+
 $error = new ErrorsView();
 
 $router = Router::create();
@@ -14,6 +15,10 @@ $router = Router::create();
 $router->get('/', [\App\Controllers\FrontController::class, 'index']);
 $router->get('/blog/', [\App\Controllers\FrontController::class, 'showArticlesListPage']);
 $router->get('/blog/{id}', [\App\Controllers\FrontController::class, 'showSingleArticlePage']);
+
+
+$router->get('/admin/', [\App\Controllers\AdminController::class, 'index']);
+$router->get('/admin/articles/', [\App\Controllers\AdminController::class, 'showArticlesTable']);
 
 
 
@@ -25,5 +30,5 @@ try {
     $router->getPublisher()->publish( new HtmlResponse( $error->render404Page(), 404));
 } catch (Throwable $e) {
     // Log and report...
-    $router->getPublisher()->publish( new HtmlResponse( $error->render500Page(), 500));
+    //$router->getPublisher()->publish( new HtmlResponse( $error->render500Page(), 500));
 }
