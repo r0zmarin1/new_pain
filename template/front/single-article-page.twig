@@ -2,10 +2,10 @@
 {% block content %}
 
     <div class="card">
-        <img src="/{{ article.image}}" class="card-img-top" alt="{{ article.title}}">
+        <img src="/{{ article.image }}" class="card-img-top" alt="{{ article.title }}">
         <div class="card-body">
-            <h5 class="card-title">{{ article.title}}</h5>
-            <p class="card-text">{{ article.content|raw}}</p>
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.content | raw }}</p>
             <a href="/blog/" class="btn btn-primary">Вернутся к списку статей</a>
         </div>
     </div>

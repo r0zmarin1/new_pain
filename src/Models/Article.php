@@ -12,7 +12,7 @@ class Article
     public function __construct()
     {
         $host = '192.168.200.79';
-        $db = '2024';
+        $db = 'rozina_1135';
         $user = 'user';
         $pass = 'user';
         $charset = 'utf8';
@@ -48,5 +48,27 @@ class Article
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function add($article)
+    {
+        $sql = "INSERT INTO ".$this->table." (id, title, image, content) VALUES (NULL, :title, :image, :content);" ;
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":title", $article['title'], \PDO::PARAM_STR);
+        $stmt->bindValue(":image", $article['image'], \PDO::PARAM_STR);
+        $stmt->bindValue(":content", $article['content'], \PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function update(object|array|null $article)
+    {
+        $sql = "INSERT INTO ".$this->table." (id, title, image, content) VALUES (NULL, :title, :image, :content)";
+        $sql = "UPDATE ".$this->table." SET title = :title, image = :image, content = :content  WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":id", $article['id'], \PDO::PARAM_INT);
+        $stmt->bindValue(":title", $article['title'], \PDO::PARAM_STR);
+        $stmt->bindValue(":image", $article['image'], \PDO::PARAM_STR);
+        $stmt->bindValue(":content", $article['content'], \PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
 }

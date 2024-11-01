@@ -13,12 +13,16 @@ $error = new ErrorsView();
 $router = Router::create();
 
 $router->get('/', [\App\Controllers\FrontController::class, 'index']);
-$router->get('/blog/', [\App\Controllers\FrontController::class, 'showArticlesListPage']);
+$router->get('/blog', [\App\Controllers\FrontController::class, 'showArticlesListPage']);
 $router->get('/blog/{id}', [\App\Controllers\FrontController::class, 'showSingleArticlePage']);
 
 
-$router->get('/admin/', [\App\Controllers\AdminController::class, 'index']);
-$router->get('/admin/articles/', [\App\Controllers\AdminController::class, 'showArticlesTable']);
+$router->get('/admin', [\App\Controllers\AdminController::class, 'index']);
+$router->get('/admin/articles', [\App\Controllers\AdminController::class, 'showArticlesTable']);
+$router->get('/admin/article/add', [\App\Controllers\AdminController::class, 'showArticleAddPage']);
+$router->post('/admin/article/add', [\App\Controllers\AdminController::class, 'addArticle']);
+$router->get('/admin/article/{id}/edit', [\App\Controllers\AdminController::class, 'showArticleEditPage']);
+$router->post('/admin/article/update', [\App\Controllers\AdminController::class, 'updateArticle']);
 
 
 

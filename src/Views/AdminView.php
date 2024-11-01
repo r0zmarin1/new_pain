@@ -24,4 +24,15 @@ class AdminView extends CoreView
         return $this->twig->render('/articles/index-table.twig',compact('articles','pagetitle'));
     }
 
+    public function showArticleAddPage()
+    {
+        $pagetitle = "Добавление статьи";
+        return $this->twig->render('/articles/add-form.twig',compact('pagetitle'));
+    }
+    public function showArticleEditPage($article)
+    {
+        $pagetitle = "Добавление статьи";
+        return $this->twig->render('/articles/edit-form.twig',compact('pagetitle', 'article'));
+    }
+
 }
