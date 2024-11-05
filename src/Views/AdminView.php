@@ -3,6 +3,7 @@
 namespace App\Views;
 
 use App\Core\CoreView;
+use App\Core\Helper;
 
 class AdminView extends CoreView
 {
@@ -31,8 +32,14 @@ class AdminView extends CoreView
     }
     public function showArticleEditPage($article)
     {
-        $pagetitle = "Добавление статьи";
+        $pagetitle = "Редактирование статьи";
         return $this->twig->render('/articles/edit-form.twig',compact('pagetitle', 'article'));
     }
+    public function showArticleDeletePage($article)
+    {
+        $pagetitle = "Удаление статьи";
+        return $this->twig->render('/articles/delete.twig',compact('pagetitle', 'article'));
+    }
+
 
 }

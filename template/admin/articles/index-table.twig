@@ -33,6 +33,7 @@
                 <tr class="align-middle">
                     <td>{{ article.id}}</td>
                     <td>{{ article.title}}</td>
+
                     <td>
                         <div class="col p-2">
                             <img class="img-fluid " src="/{{ article.image}}" style="width: 200px" alt="Article Image">
@@ -43,6 +44,7 @@
                             <a href="/admin/article/{{ article.id}}/edit"  class="btn btn-success">
                                 <i class="bi bi-pencil-fill"></i>
                             </a>
+                            <input name="id" value="{{ article.id }}" type="hidden">
                             <a href="/admin/article/{{ article.id}}/delete"  class="btn btn-danger">
                                 <i class="bi bi-trash3"></i>
                             </a>

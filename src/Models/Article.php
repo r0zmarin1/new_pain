@@ -70,5 +70,12 @@ class Article
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+    public function delete($id): array
+    {
+        $sql = "DELETE FROM ".$this->table." WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 
 }

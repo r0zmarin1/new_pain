@@ -3,28 +3,26 @@
 
 
         <div class="card-body">
-            <form action="/admin/article/update" method="post" >
+            <form action="/admin/article/add" method="post" >
             <div class="form-group">
                 <label>Название статьи</label>
-                <input type="hidden" name="id" value="{{ article.id }}">
-                <input type="text"  class="form-control" name="title" id="title" placeholder="введите название"
-                value="{{ article.title }}">
+                <input type="text"  class="form-control" name="title" id="title" placeholder="введите название">
             </div>
                
             <div class="form-group">
                 <label>Содержание статьи</label>
 
                 <textarea name="content" id="editor" cols="50" rows="10" placeholder="введите содержание">
-                    {{ article.content }}
+
                 </textarea>
             </div>
             <div class="form-group">
                 <label>Путь к фото статьи</label>
-                <input type="text"  class="form-control" name="image" id="image" placeholder="введите путь к фото" value="{{ article.image }}">
+                <input type="text"  class="form-control" name="image" id="image" placeholder="введите путь к фото">
             </div>
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" name="btnCreate">Сохранить статью</button>
+                    <button type="submit" class="btn btn-primary" name="btnCreate">Добавить статью</button>
                 </div>
             </form>
         </div>

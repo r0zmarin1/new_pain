@@ -23,6 +23,9 @@ $router->get('/admin/article/add', [\App\Controllers\AdminController::class, 'sh
 $router->post('/admin/article/add', [\App\Controllers\AdminController::class, 'addArticle']);
 $router->get('/admin/article/{id}/edit', [\App\Controllers\AdminController::class, 'showArticleEditPage']);
 $router->post('/admin/article/update', [\App\Controllers\AdminController::class, 'updateArticle']);
+$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'showAskToDeleteArticle']);
+$router->get('/admin/article/delete', [\App\Controllers\AdminController::class, 'deleteArticle']);
+
 
 
 
@@ -31,7 +34,7 @@ try {
     $router->dispatch();
 } catch (RouteNotFoundException $e) {
     // It's 404!
-    $router->getPublisher()->publish( new HtmlResponse( $error->render404Page(), 404));
+   $router->getPublisher()->publish( new HtmlResponse( $error->render404Page(), 404));
 } catch (Throwable $e) {
     // Log and report...
     //$router->getPublisher()->publish( new HtmlResponse( $error->render500Page(), 500));

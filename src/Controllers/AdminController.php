@@ -40,7 +40,11 @@ class AdminController
     {
         $article = $this->Article->find($id);
         echo $this->View->showArticleEditPage($article);
-
+    }
+    public function showAskToDeleteArticle($id)
+    {
+        $article = $this->Article->find($id);
+        echo $this->View->showArticleDeletePage($article);
     }
 
     public function addArticle(ServerRequest $request)
@@ -55,8 +59,16 @@ class AdminController
     }
     public function updateArticle(ServerRequest $request)
     {
+        //var_dump($request);
         $article = $request->getParsedBody();
         $this->Article->update($article);
+        Helper::goUrl('/admin/articles');
+
+    }
+
+    public function deleteArticle($id){
+        $article = $this->Article->find($id);
+        $this->Article->delete($article);
         Helper::goUrl('/admin/articles');
 
     }
