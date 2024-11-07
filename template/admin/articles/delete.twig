@@ -3,37 +3,16 @@
 
 
         <div class="card-body">
-            <form action="/admin/article/add" method="post" >
+            <form action="/admin/article/delete" method="get" >
             <div class="form-group">
-                <label>Название статьи</label>
-                <input type="text"  class="form-control" name="title" id="title" placeholder="введите название">
+                <label>Вы уверены, что хотите удалить статью?</label>
+                <input type="hidden" name="id" value="{{ article.id }}">
             </div>
-               
-            <div class="form-group">
-                <label>Содержание статьи</label>
-
-                <textarea name="content" id="editor" cols="50" rows="10" placeholder="введите содержание">
-
-                </textarea>
-            </div>
-            <div class="form-group">
-                <label>Путь к фото статьи</label>
-                <input type="text"  class="form-control" name="image" id="image" placeholder="введите путь к фото">
-            </div>
-
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary" name="btnCreate">Добавить статью</button>
+                    <button type="submit" class="btn btn-primary" name="btnYes">ДА</button>
+                    <button type="submit" class="btn btn-danger" name="btnNo">НЕТ(((</button>
                 </div>
             </form>
         </div>
-        <!-- /.card-body -->
 
-        <!-- <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div> -->
-
-
-
-
-    <!-- /.card -->
 {% endblock %}

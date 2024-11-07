@@ -23,8 +23,9 @@ $router->get('/admin/article/add', [\App\Controllers\AdminController::class, 'sh
 $router->post('/admin/article/add', [\App\Controllers\AdminController::class, 'addArticle']);
 $router->get('/admin/article/{id}/edit', [\App\Controllers\AdminController::class, 'showArticleEditPage']);
 $router->post('/admin/article/update', [\App\Controllers\AdminController::class, 'updateArticle']);
-$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'showAskToDeleteArticle']);
-$router->get('/admin/article/delete', [\App\Controllers\AdminController::class, 'deleteArticle']);
+//$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'showAskToDeleteArticle']);
+//$router->get('/admin/article/delete', [\App\Controllers\AdminController::class, 'deleteArticle']);
+$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'deleteArticle']);
 
 
 

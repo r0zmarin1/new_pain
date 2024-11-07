@@ -70,10 +70,11 @@ class Article
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    public function delete($id): array
+    public function delete($id)
     {
         $sql = "DELETE FROM ".$this->table." WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":id", $id, \PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }

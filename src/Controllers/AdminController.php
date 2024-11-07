@@ -66,10 +66,11 @@ class AdminController
 
     }
 
-    public function deleteArticle($id){
-        $article = $this->Article->find($id);
-        $this->Article->delete($article);
+    public function deleteArticle($id)
+    {
+        $this->Article->delete($id);
         Helper::goUrl('/admin/articles');
+
 
     }
 
