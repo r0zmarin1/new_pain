@@ -1,7 +1,13 @@
 {% extends "layout.twig" %}
 {% block content %}
-    <h1>Index</h1>
+
+    <h1>Приветствуем</h1>
     <p class="important">
-        Welcome to my awesome homepage. LOL!!!!
+        Добро пожаловать! Авторизуйтесь для входа.
     </p>
+    <form action="" method="post">
+        <input type="text" name="login">
+        <button type="submit"> Войти </button>
+    </form>
+
 {% endblock %}

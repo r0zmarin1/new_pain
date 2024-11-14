@@ -9,7 +9,7 @@ class FrontView extends CoreView
     public function showIndexPage()
     {
         $title = 'Главная страница';
-        $description = 'Описание Главной страницы';
+        $description = 'Страдаем';
         echo $this->twig->render('index.twig', ['title' => $title, 'description' => $description]);
     }
 

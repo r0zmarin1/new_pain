@@ -41,11 +41,7 @@ class AdminController
         $article = $this->Article->find($id);
         echo $this->View->showArticleEditPage($article);
     }
-    public function showAskToDeleteArticle($id)
-    {
-        $article = $this->Article->find($id);
-        echo $this->View->showArticleDeletePage($article);
-    }
+
 
     public function addArticle(ServerRequest $request)
     {
