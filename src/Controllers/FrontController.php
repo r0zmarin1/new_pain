@@ -3,10 +3,11 @@
 namespace App\Controllers;
 
 use App\Core\CoreController;
-use App\Core\Helper as h;
+use App\Core\Helper;
 use App\Models\Article;
 use App\Models\JsonModel;
 use App\Views\FrontView;
+use Laminas\Diactoros\ServerRequest;
 
 class FrontController
 {
@@ -33,7 +34,37 @@ class FrontController
     public function showSingleArticlePage($id)
     {
         $article = $this->Model->find($id);
-        //h::dd($article);
         $this->View->renderSingleArticlePage($article);
+    }
+
+    public function showAuthorizationPage()
+    {
+        $this->View->renderAuthorizationPage();
+    }
+
+    public function authorizationEntry(ServerRequest $request)
+    {
+        //var_dump($login);
+        $login = $request->getParsedBody();
+//        if ( !isset ($_SESSION[ 'admin' ]))
+//            echo( 'Вы не авторизованы!');
+//        else
+//        {
+//            define('ADMIN' , 'admin' );
+//            if(!empty( $_POST['login']))
+//            {
+//                if( $_POST['login'] === ADMIN )
+//                {
+//                    $_SESSION[ 'admin' ] = ADMIN ;
+//                    echo 'Вы успешно авторизовались!';
+//                    Helper::goUrl('/admin/articles');
+//                }
+//                else
+//                {
+//                    echo 'Неверный логин' ;
+//                }
+//            }
+//
+//        }
     }
 }

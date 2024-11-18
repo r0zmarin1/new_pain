@@ -66,8 +66,6 @@ class AdminController
     {
         $this->Article->delete($id);
         Helper::goUrl('/admin/articles');
-
-
     }
 
 }

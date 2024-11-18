@@ -1,0 +1,13 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+    <h1>Авторизация</h1>
+    <p class="important">
+        Авторизуйтесь для входа.
+    </p>
+    <form action="/authorization/entry" method="post">
+        <input type="text" name="login">
+        <button type="submit"> Войти </button>
+    </form>
+
+{% endblock %}
