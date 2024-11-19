@@ -16,9 +16,10 @@ $router->get('/', [\App\Controllers\FrontController::class, 'index']);
 $router->get('/blog', [\App\Controllers\FrontController::class, 'showArticlesListPage']);
 $router->get('/blog/{id}', [\App\Controllers\FrontController::class, 'showSingleArticlePage']);
 $router->get('/authorization', [\App\Controllers\FrontController::class, 'showAuthorizationPage']);
-$router->get('/authorization/entry', [\App\Controllers\FrontController::class, 'authorizationEntry']);
+$router->post('/authorization/entry', [\App\Controllers\FrontController::class, 'authorizationEntry']);
 
 $router->get('/admin', [\App\Controllers\AdminController::class, 'index']);
+$router->get('/exit', [\App\Controllers\AdminController::class, 'exitAuthorization']);
 $router->get('/admin/articles', [\App\Controllers\AdminController::class, 'showArticlesTable']);
 $router->get('/admin/article/add', [\App\Controllers\AdminController::class, 'showArticleAddPage']);
 $router->post('/admin/article/add', [\App\Controllers\AdminController::class, 'addArticle']);

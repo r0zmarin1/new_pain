@@ -19,7 +19,7 @@ class AdminController
         $this->Article = new Article();
     }
 
-    public function index()
+    public function index(ServerRequest $request)
     {
         echo $this->View->renderIndexPage();
     }
@@ -42,6 +42,16 @@ class AdminController
         echo $this->View->showArticleEditPage($article);
     }
 
+  public function exitAuthorization()
+    {
+        if(isset($_SESSION ['admin'])){
+            unset($_SESSION ['admin']);
+            echo 'Вы успешно вышли из сессии';
+        }
+        else
+            echo 'Вы не в сессии';
+        Helper::goUrl('/blog');
+    }
 
     public function addArticle(ServerRequest $request)
     {

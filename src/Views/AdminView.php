@@ -35,11 +35,7 @@ class AdminView extends CoreView
         $pagetitle = "Редактирование статьи";
         return $this->twig->render('/articles/edit-form.twig',compact('pagetitle', 'article'));
     }
-    public function showArticleDeletePage($article)
-    {
-        $pagetitle = "Удаление статьи";
-        return $this->twig->render('/articles/delete.twig',compact('pagetitle', 'article'));
-    }
+
 
 
 

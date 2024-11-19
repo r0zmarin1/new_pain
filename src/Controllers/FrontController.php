@@ -44,27 +44,26 @@ class FrontController
 
     public function authorizationEntry(ServerRequest $request)
     {
-        //var_dump($login);
         $login = $request->getParsedBody();
-//        if ( !isset ($_SESSION[ 'admin' ]))
-//            echo( 'Вы не авторизованы!');
+        //var_dump($login);
+//
 //        else
 //        {
-//            define('ADMIN' , 'admin' );
-//            if(!empty( $_POST['login']))
-//            {
-//                if( $_POST['login'] === ADMIN )
-//                {
-//                    $_SESSION[ 'admin' ] = ADMIN ;
-//                    echo 'Вы успешно авторизовались!';
-//                    Helper::goUrl('/admin/articles');
-//                }
-//                else
-//                {
-//                    echo 'Неверный логин' ;
-//                }
-//            }
-//
-//        }
+            define('ADMIN' , 'admin' );
+            if(!empty( $_POST['login']))
+            {
+                if( $_POST['login'] === ADMIN )
+                {
+                    $_SESSION[ 'admin' ] = ADMIN ;
+                    echo 'Вы успешно авторизовались!';
+                    Helper::goUrl('/admin/articles');
+                }
+                else
+                {
+                    echo 'Неверный логин' ;
+                }
+            }
+
+
     }
 }
