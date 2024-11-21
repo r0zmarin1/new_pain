@@ -5,7 +5,8 @@
         "twig/twig": "^3.14",
         "miladrahimi/phprouter": "5.*",
         "ext-pdo": "*",
-        "filp/whoops": "^2.16"
+        "filp/whoops": "^2.16",
+        "wixel/gump": "^1.11"
     },
     "license": "MIT",
     "autoload": {

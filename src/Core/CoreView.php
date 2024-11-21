@@ -13,6 +13,8 @@ class CoreView implements ViewInterface
     {
         $this->setLoader('template/front/');
         $this->twig = new \Twig\Environment($this->loader, []);
+
+        $this->twig->addGlobal('session', $_SESSION);
     }
 
     public function setLoader($path)
