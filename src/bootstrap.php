@@ -33,13 +33,13 @@ $router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::cl
 
 
 
-
+$router->dispatch();
+/*
 try {
-    $router->dispatch();
 } catch (RouteNotFoundException $e) {
     // It's 404!
    //$router->getPublisher()->publish( new HtmlResponse( $error->render404Page(), 404));
 } catch (Throwable $e) {
     // Log and report...
     //$router->getPublisher()->publish( new HtmlResponse( $error->render500Page(), 500));
-}
+}*/

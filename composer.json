@@ -6,7 +6,7 @@
         "miladrahimi/phprouter": "5.*",
         "ext-pdo": "*",
         "filp/whoops": "^2.16",
-        "wixel/gump": "^1.11"
+        "wixel/gump": "^v2.0.0"
     },
     "license": "MIT",
     "autoload": {

@@ -11,9 +11,9 @@ trait Auth
         else
             return false;
     }
-    public function login($login, $password)
+    public function login($login)
     {
-        if($login != null && $password != null)
+        if($login != null)
         {
             //set($_SESSION['user']->login, $login);
             $_SESSION['user'] = $login;
