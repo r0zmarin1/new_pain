@@ -2,13 +2,19 @@
 
 namespace App\Models;
 
+use App\Core\Interfaces\ModelInterface;
+use CoreModel;
 use PDO;
 use App\Core\Helper as h;
 
-class Article
+
+class Article extends CoreModel implements ModelInterface
 {
     protected $pdo;
     protected $table;
+    public array $fields = [
+        'id', 'title', 'image', ''
+    ]
     public function __construct()
     {
         $host = '192.168.200.79';
@@ -25,6 +31,8 @@ class Article
         $this->pdo = new PDO($dsn, $user, $pass, $opt);
         $this->setTable('articles');
     }
+
+
 
     /**
      * @param mixed $table
