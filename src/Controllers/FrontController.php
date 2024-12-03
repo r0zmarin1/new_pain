@@ -16,10 +16,13 @@ class FrontController
 
     public function __construct()
     {
+
         $this->View = new FrontView();
         $this->Model = new Article();
+        //$this->View->setLoader('template/front');
         //$this->Model = new JsonModel();
         //$this->Model = new MarkDownModel();
+
     }
     public function index()
     {

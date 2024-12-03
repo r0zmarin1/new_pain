@@ -1,4 +1,6 @@
 <?php
+namespace App\Core\Interfaces;
+use Laminas\Diactoros\ServerRequest;
 
 interface ControllerInterface
 {
@@ -15,26 +17,26 @@ interface ControllerInterface
     /**
      * Store a newly created resource in storage.
      */
-    public function store($request);
+    public function store(ServerRequest $request);
 
     /**
      * Display the specified resource.
      */
-    public function show($resource);
+    public function show();
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($resource);
+    public function edit($id);
 
     /**
      * Update the specified resource in storage.
      */
-    public function update($request, $resource);
+    public function update(ServerRequest $request);
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($resource);
+    public function destroy($id);
 
 }

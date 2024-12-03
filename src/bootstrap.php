@@ -20,14 +20,14 @@ $router->post('/authorization/entry', [\App\Controllers\FrontController::class, 
 
 $router->get('/admin', [\App\Controllers\AdminController::class, 'index']);
 $router->get('/exit', [\App\Controllers\AdminController::class, 'exitAuthorization']);
-$router->get('/admin/articles', [\App\Controllers\AdminController::class, 'showArticlesTable']);
-$router->get('/admin/article/add', [\App\Controllers\AdminController::class, 'showArticleAddPage']);
-$router->post('/admin/article/add', [\App\Controllers\AdminController::class, 'addArticle']);
-$router->get('/admin/article/{id}/edit', [\App\Controllers\AdminController::class, 'showArticleEditPage']);
-$router->post('/admin/article/update', [\App\Controllers\AdminController::class, 'updateArticle']);
+$router->get('/admin/articles', [\App\Controllers\AdminController::class, 'show']);
+$router->get('/admin/article/add', [\App\Controllers\AdminController::class, 'create']);
+$router->post('/admin/article/add', [\App\Controllers\AdminController::class, 'store']);
+$router->get('/admin/article/{id}/edit', [\App\Controllers\AdminController::class, 'edit']);
+$router->post('/admin/article/update', [\App\Controllers\AdminController::class, 'update']);
 //$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'showAskToDeleteArticle']);
 //$router->get('/admin/article/delete', [\App\Controllers\AdminController::class, 'deleteArticle']);
-$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'deleteArticle']);
+$router->get('/admin/article/{id}/delete', [\App\Controllers\AdminController::class, 'destroy']);
 
 
 
